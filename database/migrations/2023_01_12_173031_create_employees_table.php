@@ -20,6 +20,7 @@ class CreateEmployeesTable extends Migration
             // $table->integer('company');
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
+            $table->tinyInteger('record_status')->default('1')->comment('for soft delete');
             $table->timestamps();
 
             $table->unsignedBigInteger('company');
