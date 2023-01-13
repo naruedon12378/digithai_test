@@ -14,6 +14,7 @@ class Employee extends Model
         'company',
         'email',
         'phone',
+        'record_status',
     ];
 
     //IN [FK]

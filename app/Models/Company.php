@@ -14,6 +14,7 @@ class Company extends Model
         'email',
         'logo',
         'website',
+        'record_status',
     ];
 
     //OUT [PK]
