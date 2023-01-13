@@ -77,9 +77,9 @@
                                 </div>
                             </div>
                             <div class="form-group col-6 text-center">
-                                <label for="f1" class="col-form-label">Logo</label>
+                                <label for="f1" class="col-form-label">Logo <small>(*min 100x100px)</small></label>
                                 <img id="show_img" class="form-control" style="max-height:350px;max-width:100%;height:auto;width:100%;"  src="{{asset('storage/default.png')}}" alt="your image" />
-                                <input type="file" class="form-control" id="logo" name="logo" >
+                                <input type="file" class="form-control" id="logo" name="logo" required>
                             </div>
                         </div>
                     </form>
@@ -227,7 +227,7 @@
                                     processData: false,
                                     cache: false,
                                     success: function(response) {
-                                        if (response) {
+                                        if (response.status == 'success') {
                                             Swal.fire({
                                                 position: 'center-center',
                                                 icon: 'success',
@@ -267,7 +267,7 @@
                                     processData: false,
                                     cache: false,
                                     success: function(response) {
-                                        if (response) {
+                                        if (response.status == 'success') {
                                             Swal.fire({
                                                 position: 'center-center',
                                                 icon: 'success',
@@ -319,7 +319,7 @@
                             },
                             dataType: "json",
                             success: function(response) {
-                                if (response) {
+                                if (response.status == 'success') {
                                     Swal.fire({
                                         position: 'center-center',
                                         icon: 'success',

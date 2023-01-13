@@ -221,7 +221,7 @@
                                     processData: false,
                                     cache: false,
                                     success: function(response) {
-                                        if (response) {
+                                        if (response.status == 'success') {
                                             Swal.fire({
                                                 position: 'center-center',
                                                 icon: 'success',
@@ -261,7 +261,7 @@
                                     processData: false,
                                     cache: false,
                                     success: function(response) {
-                                        if (response) {
+                                        if (response.status == 'success') {
                                             Swal.fire({
                                                 position: 'center-center',
                                                 icon: 'success',
@@ -313,7 +313,7 @@
                             },
                             dataType: "json",
                             success: function(response) {
-                                if (response) {
+                                if (response.status == 'success') {
                                     Swal.fire({
                                         position: 'center-center',
                                         icon: 'success',

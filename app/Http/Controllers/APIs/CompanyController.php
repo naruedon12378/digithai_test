@@ -83,7 +83,7 @@ class CompanyController extends Controller
             }
 
         } catch (\Exception $ex){
-            dd($ex);
+
             $result['status'] = "failed";
             $result['message'] = $ex;
             DB::rollBack();
