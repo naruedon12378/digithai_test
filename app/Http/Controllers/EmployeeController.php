@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\CompanyInterface;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -14,6 +15,7 @@ class EmployeeController extends Controller
     }
     public function list()
     {
-        return view('master.employee');
+        $companies = $this->companyRepository->all();
+        return view('master.employee',compact('companies'));
     }
 }

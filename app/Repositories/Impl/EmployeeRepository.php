@@ -20,10 +20,13 @@ class EmployeeRepository extends BaseRepository implements EmployeeInterface
 
     public function paginate($param): Collection
     {
-        return $this->model->orderBy($param['columnName'],$param['columnSortOrder'])
+        return $this->model->with('company')->orderBy($param['columnName'],$param['columnSortOrder'])
             ->where('record_status','=',1)
             ->where(function($q) use ($param) {
-                $q->where('name', 'like', '%' .$param['searchValue'] . '%');
+                $q->where('first_name', 'like', '%' .$param['searchValue'] . '%');
+                $q->orWhere('last_name', 'like', '%' .$param['searchValue']. '%');
+                $q->orWhere('email', 'like', '%' .$param['searchValue']. '%');
+                $q->orWhere('phone', 'like', '%' .$param['searchValue']. '%');
             })
             ->select('*')
             ->skip($param['start'])

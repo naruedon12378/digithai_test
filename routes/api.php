@@ -27,4 +27,10 @@ Route::group(
         Route::post("/company/view/edit",[\App\Http\Controllers\APIs\CompanyController::class,"companyViewEdit"])->name('company.view.edit');
         Route::post("/company/edit",[\App\Http\Controllers\APIs\CompanyController::class,"companyEdit"])->name('company.edit');
         Route::post("/company/delete",[\App\Http\Controllers\APIs\CompanyController::class,"companyDelete"])->name('company.delete');
+
+        Route::post("/employee/list",[\App\Http\Controllers\APIs\EmployeeController::class,"employeeList"])->name('employee.list');
+        Route::post("/employee/create",[\App\Http\Controllers\APIs\EmployeeController::class,"employeeCreate"])->name('employee.create');
+        Route::post("/employee/view/edit",[\App\Http\Controllers\APIs\EmployeeController::class,"employeeViewEdit"])->name('employee.view.edit');
+        Route::post("/employee/edit",[\App\Http\Controllers\APIs\EmployeeController::class,"employeeEdit"])->name('employee.edit');
+        Route::post("/employee/delete",[\App\Http\Controllers\APIs\EmployeeController::class,"employeeDelete"])->name('employee.delete');
     });
